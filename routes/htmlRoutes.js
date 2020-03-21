@@ -1,15 +1,15 @@
-const path = require("path");
+// Sets dependencies
+var path = require("path");
+var router = require("express").Router();
 
-module.exports = function(app) {
-    app.get("/", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/index.html"));
-    });
+// GETs the notes file to join with the index page
+router.get("/notes", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/notes.html"));
+});
 
-    app.get("/notes", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/notes.html"));
-    });
+// Routes for the index page
+router.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
 
-    app.get("*", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/index.html"));
-    });
-};
+module.exports = router;

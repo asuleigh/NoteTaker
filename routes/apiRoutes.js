@@ -1,36 +1,28 @@
-const fs = require("fs");
+// Sets dependencies
+const router = require("express").Router();
+const save = require("../db/saveNote");
 
+// GET and POST routes for the notes in the db
+router.get("/notes", function(req, res) {
+  save
+    .getNotes()
+    .then(notes => res.json(notes))
+    .catch(err => res.status(500).json(err));
+});
 
-module.exports = function(app, notes) {
+router.post("/notes", (req, res) => {
+  save
+    .addNote(req.body)
+    .then((note) => res.json(note))
+    .catch(err => res.status(500).json(err));
+});
 
-    app.get("/api/notes", function (req, res) {
-        return res.json(notes);
-    });
+// Function for getting id for deletion
+router.delete("/notes/:id", function(req, res) {
+  save
+    .removeNote(req.params.id)
+    .then(() => res.json({ ok: true }))
+    .catch(err => res.status(500).json(err));
+});
 
-    app.post("/api/notes", function(req,res){
-        let newNote = req.body;
-        notesInfo.push(newNote);
-        addId();
-        let save = JSON.stringify(notesInfo);
-        fs.writeFileSync("db.json",save)
-    
-        res.redirect('back');
-    });
-    
-    app.delete("/api/notes/:id", function (req,res) {
-        const deleted = notesInfo.findIndex((i) => i.id == req.params.id);
-        notesInfo.splice(deleted, 1);
-        reWrite();
-        res.json(notesInfo);
-    });
-    
-    function addId() {
-        notesInfo.forEach((element, i) => {
-            element.id = i + 1;
-        });
-    };
-    let reWrite = () => {
-        let newDB = JSON.stringify(notesInfo);
-        fs.writeFile('db.json', newDB, err => { if (err) throw err });
-    };
-}
+module.exports = router;
