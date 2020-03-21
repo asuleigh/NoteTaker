@@ -1,5 +1,5 @@
 # [Note Taker](https://asuleigh.github.io/NoteTaker/)
-An application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
+An application that can be used to write, save, and delete notes. This application uses an express backend to save and retrieve note data from a JSON file.
 
 ### Links
 [Note Taker](https://asuleigh.github.io/NoteTaker/)
