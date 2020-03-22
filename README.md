@@ -35,7 +35,7 @@ i: INSTALLATION -In order to clone or download website for functionality on loca
 
 ii: USAGE -Layout is as it appears and is responsive. Input a title for a note with accompanying content and save it to the list on the left of the page. Click the note in the list to bring it back up on the right. Use the trash can icons to delete the notes.
 
-iii: CREDITS -https://w3schools.com 
+iii: CREDITS -https://w3schools.com -https://www.npmjs.com/package/compression -https://www.npmjs.com/package/express -https://expressjs.com/ -https://expressjs.com/en/guide/routing.html -https://www.npmjs.com/package/db-json
 
 iv: LICENSE GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
 
