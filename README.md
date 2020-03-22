@@ -33,7 +33,7 @@ i: INSTALLATION -In order to clone or download website for functionality on loca
 
 -If not using Heroku link and wanting to deploy on local port: Open terminal, npm i and npm install all dependencies listed in app files, use "npm start server.js" to start the server listening on port 3000.
 
-ii: USAGE -Layout is as it appears and is responsive. Input a title for a note with accompanying content and save it to the list on the left of the page. Use the trash can icons to delete the notes.
+ii: USAGE -Layout is as it appears and is responsive. Input a title for a note with accompanying content and save it to the list on the left of the page. Click the note in the list to bring it back up on the right. Use the trash can icons to delete the notes.
 
 iii: CREDITS -https://w3schools.com 
 
